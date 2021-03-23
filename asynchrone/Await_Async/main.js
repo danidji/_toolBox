@@ -25,7 +25,9 @@ const get = function (url) {
 
 const asyncFunction = async function () {
     let response = await get('https://www.songsterr.com/a/ra/songs.json?pattern=Marley');
-    // console.log(response)
+
+    console.log("-------------")
+    console.log(response)
 
 }
 
