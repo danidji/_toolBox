@@ -5,22 +5,6 @@ $colorBox: #9ECABD
 $colorCircle: #E70BFD
 $fontFamily: sans-serif
 
-body
-  padding: 50px
-  font: 14px $fontFamily
-
-a
-  color: #00B7FF
-
-h1
-  color: $colorTitle
-  font-family: $colorTitle
-
-p
-  color: $colorTitle
-  font-family: $colorTitle
-
-  //Ajout d'une mixin => créer des fonctions
 =transform($property,$color,$width)
   // -webkit-transform: $property
   // -ms-transform: $property
@@ -35,6 +19,24 @@ p
   height: $size
   border-radius: $size/2
   background-color: $color
+
+body
+  padding: 50px
+  font: 14px $fontFamily
+
+a
+  color: #00B7FF
+
+h1
+  color: $colorTitle
+  font-family: $colorTitle
+  text-align: center
+
+p
+  color: $colorTitle
+  font-family: $colorTitle
+
+  //Ajout d'une mixin => créer des fonctions
 
 .box
   +transform(rotate(45deg),$colorTitle,100px)
