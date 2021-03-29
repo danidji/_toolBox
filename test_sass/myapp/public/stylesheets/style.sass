@@ -1,7 +1,8 @@
 //Déclaration de variable:
 
-$colorTitle: red
-$colorBox: green
+$colorTitle: #451019
+$colorBox: #9ECABD
+$colorCircle: #E70BFD
 $fontFamily: sans-serif
 
 body
@@ -29,6 +30,12 @@ p
   width: $width
   height: $width
 
+=getCircle($size,$color)
+  width: $size
+  height: $size
+  border-radius: $size/2
+  background-color: $color
+
 .box
   +transform(rotate(45deg),$colorTitle,100px)
   display: flex
@@ -36,5 +43,11 @@ p
   justify-content: center
   align-items: center
 
+.forme
+  display: flex
+
 .insideBox
   +transform(rotate(45deg),$colorBox,50px)
+
+.circle
+  +getCircle(100px,$colorCircle)
