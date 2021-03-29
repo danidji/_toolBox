@@ -15,10 +15,27 @@ $fontFamily: sans-serif
   height: $width
 
 =getCircle($size,$color)
-  width: $size
-  height: $size
+  // width: $size
+  // height: $size
+  +getSize($size,$size)
   border-radius: $size/2
   background-color: $color
+
+=getPadding($rightLeft,$topBottom)
+  padding-left: $rightLeft
+  padding-right: $rightLeft
+  padding-top: $topBottom
+  padding-bottom: $topBottom
+
+=getMargin($rightLeft,$topBottom)
+  margin-left: $rightLeft
+  margin-right: $rightLeft
+  margin-top: $topBottom
+  margin-bottom: $topBottom
+
+=getSize($width,$height)
+  width: $width
+  height: $height
 
 body
   padding: 50px
@@ -38,15 +55,18 @@ p
 
   //Ajout d'une mixin => créer des fonctions
 
+.forme
+  display: flex
+  height: 400px
+  +getMargin(50px,20px)
+  +getPadding(50px,50px)
+
 .box
   +transform(rotate(45deg),$colorTitle,100px)
   display: flex
   flex-direction: row
   justify-content: center
   align-items: center
-
-.forme
-  display: flex
 
 .insideBox
   +transform(rotate(45deg),$colorBox,50px)
