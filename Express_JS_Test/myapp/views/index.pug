@@ -1,0 +1,28 @@
+extends layout
+//- ^--- export vers layout
+//- v-- indique que tout ce qui se trouve en dessous sera exporter vers l'extends
+block content
+
+  .container 
+    h1= title
+    p Bienvenue sur  #{title}
+
+    p On test aussi la syntaxe pug JS
+
+
+    //-Voici comment ajouter un lien
+    a(href='//google.com') Google
+    |
+    |
+    a(class='button' href='//google.com') Google
+    |
+    |
+    a(class='button', href='//google.com') Google
+    |
+    |
+    p 
+      input(
+      type='checkbox'
+      name='agreement'
+      checked
+      )
