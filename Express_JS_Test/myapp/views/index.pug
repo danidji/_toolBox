@@ -63,12 +63,24 @@ block content
     +test_mixin_while(10)
     +test_mixin_while(2)
 
+
+    +ajoutTitre('Test des mixin bloc')
+      p Lorem ipsum dolor sit amet.
+
 //- On peut faire des fonctions qui géneront du html
 mixin test_mixin_while(nb) 
   - var n = 0 
   ul Voici mon ul-mixins
     while n < nb 
       li.test= n++
+//- v-- Afficher le titre, si un bloc est défini ensuite on l'affiche sinon on affiche "pas de contenue"
+mixin ajoutTitre (titre) 
+  .blocTitre 
+    h1= titre 
+    if block  
+      block 
+    else 
+      p Pas de contenue
 
 
 
