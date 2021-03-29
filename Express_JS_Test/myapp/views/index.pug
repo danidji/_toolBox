@@ -1,6 +1,9 @@
 extends layout
 //- ^--- export vers layout
 //- v-- indique que tout ce qui se trouve en dessous sera exporter vers l'extends
+
+
+
 block content
 
   .container 
@@ -56,11 +59,25 @@ block content
       while n < 5
         li= n++
 
+    +test_mixin_while(5)
+    +test_mixin_while(10)
+    +test_mixin_while(2)
+
+//- On peut faire des fonctions qui géneront du html
+mixin test_mixin_while(nb) 
+  - var n = 0 
+  ul Voici mon ul-mixins
+    while n < nb 
+      li.test= n++
+
+
+
 
 block scripts
 
   //- v--- envoyer du script js 
   script(src='./javascripts/test1.js') 
   script(src='./javascripts/test2.js') 
+
 
   
