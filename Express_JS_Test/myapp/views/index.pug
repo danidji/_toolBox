@@ -20,9 +20,47 @@ block content
     a(class='button', href='//google.com') Google
     |
     |
-    p 
+    .input Mon input checkBox
       input(
       type='checkbox'
       name='agreement'
       checked
       )
+
+     
+
+
+    //- Gestion des conditions en pug 
+    - var user = {description: 'test condition'}
+    - var authorised = false
+    #user
+    if user.description
+      h2.green Description
+      p.description= user.description
+    else if authorised
+      h2.blue Description
+      p.description.
+        User has no description,
+        why not add one...
+    else
+      h2.red Description
+      p.description User has no description
+ 
+    //- Gestion des boucles : 
+    ul Test boucle
+      each val in [1, 2, 3, 4, 5]
+        li= val  
+
+    - var n = 0;
+    ul test while
+      while n < 5
+        li= n++
+
+
+block scripts
+
+  //- v--- envoyer du script js 
+  script(src='./javascripts/test1.js') 
+  script(src='./javascripts/test2.js') 
+
+  
